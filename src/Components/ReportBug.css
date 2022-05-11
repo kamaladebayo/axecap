@@ -1,0 +1,56 @@
+.reportbug{
+    display: flex;
+    min-height: 100%;
+}
+.reportbug main{
+    padding: 2em;
+    flex: 1;
+}
+@media(max-width: 500px){
+    .reportbug{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .reportbug > main{
+        order: 1;
+        padding: 1.5em;
+        flex: 1;
+    }
+    .reportbug > .sidebar{
+        flex-direction: row;
+        order: 2;
+        justify-content: space-between;
+        padding: .5em 1.5em;
+        position: sticky;
+        bottom: 0;
+        border-top: 1px solid #ABABAB;
+    }
+    .reportbug > span{
+        display: none;
+    }
+}
+
+
+/* Rating stars */
+.reportbug .css-iljtu2-MuiRating-root{
+    gap: .8em;
+}
+.reportbug form{
+    /* border: 1px solid red; */
+    max-width: 700px;
+}
+.reportbug form textarea{
+    /* margin-top: 1em; */
+    display: block;
+    /* padding: 1em; */
+    width: 100% !important;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+}
+.reportbug .css-wb57ya-MuiFormControl-root-MuiTextField-root{
+    margin: 1em 0 !important;
+}
+.reportbug .css-sghohy-MuiButtonBase-root-MuiButton-root{
+    margin-left: auto !important;
+    display: block !important;
+}

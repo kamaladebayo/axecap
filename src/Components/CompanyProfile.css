@@ -1,0 +1,33 @@
+.company{
+    min-height: 100%;
+    display: flex;
+    /* background: #f7f7f7; */
+}
+.company > main{
+    /* border: 1px dashed green; */
+    flex: 1;
+    padding: 1em 3em;
+    line-height: 1.3em;
+}
+@media(max-width: 500px){
+    .company{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .company > main{
+        order: 1;
+        padding: 1.5em;
+    }
+    .company > .sidebar{
+        flex-direction: row;
+        order: 2;
+        justify-content: space-between;
+        padding: .8em 1.5em;
+        position: sticky;
+        border-top: 1px solid #ABABAB;
+        bottom: 0;
+    }
+    .sidebar > span{
+        display: none;
+    }
+}

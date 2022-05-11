@@ -1,0 +1,26 @@
+.sidebar{
+    flex: .05;
+    background: #FFF;
+    /* border: 1px dashed red; */
+    border-right: 1px solid #AFAFAF;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+    gap: 2em;
+}
+.sidebar > span > ion-icon, .sidebar > a > ion-icon{
+    font-size: 1.7rem;
+    color: #ABABAB;
+    cursor: pointer;
+}
+.sidebar > .sidebar__logo > ion-icon{
+    color: #FFFFFF;
+    font-size: 2.1rem;
+    background: #b62531;
+    border-radius: 50%;
+    padding: .2em;
+}
+.sidebar > .sidebar__active > ion-icon{
+    color: #b62531;
+}
