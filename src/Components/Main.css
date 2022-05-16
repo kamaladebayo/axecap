@@ -1,4 +1,70 @@
 .main{
     flex: .75;
     /* border: 1px dashed green; */
+    padding: 2em;
+    padding-bottom: .5em;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.main > h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.main__searchContainer {
+    display: flex;
+    grid-gap: 1em;
+    gap: 1em;
+    background: #efefef;
+    padding: 0.7em 1.5em;
+    border-radius: 3em;
+    align-items: center;
+}
+.main__searchContainer > input {
+    flex: 1 1;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    outline-width: 0 !important;
+    font-family: 'Roboto', sans-serif;
+}
+.main__assetsTray{
+    display: flex;
+    gap: 1em;
+    overflow-x: auto;
+    padding-bottom: 1em;
+}
+.assetsTray__skeleton{
+    display: flex;
+    gap: 1em;
+    overflow-x: auto;
+    padding-bottom: 1em;
+}
+.main__newsHeader{
+    margin-bottom: 1em;
+    margin-top: .8em;
+}
+.main__newsList{
+    display: flex;
+    gap: 1em;
+    overflow-y: auto;
+    flex-direction: column;
+    flex: 1;
+    
+}
+.newsList__skeleton{
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    flex: 1;
+}
+.main__assetsTray::-webkit-scrollbar, .assetsTray__skeleton::-webkit-scrollbar {
+    height: 0.3em;
+}
+.main__assetsTray::-webkit-scrollbar-thumb,  .assetsTray__skeleton::-webkit-scrollbar-thumb{
+    background: rgb(65, 9, 170);
+}
+.main__assetsTray::-webkit-scrollbar-track, .assetsTray__skeleton::-webkit-scrollbar-track {
+    background: #f1f1f1;
 }

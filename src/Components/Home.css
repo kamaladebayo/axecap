@@ -1,6 +1,29 @@
 .home{
     min-height: 100%;
     display: flex;
-    background: #efefef;
-
+    /* background: #efefef; */
+}
+@media(max-width: 850px){
+    .home{
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2em;
+    }
+    .home > .main{
+        order: 1;
+        padding: 1.5em;
+        flex: 1;
+    }
+    .home > .sidebar{
+        flex-direction: row;
+        order: 3;
+        justify-content: space-between;
+        padding: .5em 1.5em;
+        position: sticky;
+        bottom: 0;
+        border-top: 1px solid #ABABAB;
+    }
+    .home > .actions{
+        order: 2;
+    }
 }
