@@ -6,9 +6,11 @@
 }
 .actions > div, .actions > div > div{
     height: 100% !important;
+    min-height: 430px !important;
 }
 .actions iframe{
     height: 100% !important;
+    min-height: 430px !important;
     /* padding: 2em 1em !important; */
     border-radius: 1em !important;
 }

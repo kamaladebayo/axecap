@@ -6,7 +6,7 @@ const Actions = () => {
             <Timeline 
                 dataSource={{
                     sourceType: 'profile',
-                    screenName: 'cryptonews'
+                    screenName: 'Blockworks_'
                 }}
                 options={{
                 height: '400'

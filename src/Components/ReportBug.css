@@ -6,7 +6,7 @@
     padding: 2em;
     flex: 1;
 }
-@media(max-width: 500px){
+@media(max-width: 850px){
     .reportbug{
         flex-direction: column;
         justify-content: space-between;
@@ -25,6 +25,9 @@
         bottom: 0;
         border-top: 1px solid #ABABAB;
     }
+    .reportbug .sidebar .sidebar__logo > ion-icon{
+        font-size: 1.7rem;
+    }
     /* .reportbug > span{
         display: none;
     } */
@@ -38,6 +41,9 @@
 .reportbug form{
     /* border: 1px solid red; */
     max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 .reportbug form textarea{
     /* margin-top: 1em; */
@@ -48,7 +54,7 @@
     font-family: 'Lato', sans-serif;
 }
 .reportbug .css-wb57ya-MuiFormControl-root-MuiTextField-root{
-    margin: 1em 0 !important;
+    /* margin: 1em 0 !important; */
 }
 .reportbug .css-sghohy-MuiButtonBase-root-MuiButton-root{
     margin-left: auto !important;

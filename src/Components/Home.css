@@ -23,7 +23,11 @@
         bottom: 0;
         border-top: 1px solid #ABABAB;
     }
+    .home .sidebar .sidebar__logo > ion-icon{
+        font-size: 1.7rem;
+    }
     .home > .actions{
         order: 2;
+        min-height: 500px;
     }
 }

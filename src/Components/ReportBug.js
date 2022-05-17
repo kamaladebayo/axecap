@@ -10,6 +10,8 @@ import { collection, addDoc } from "firebase/firestore";
 const ReportBug = () => {
     const [value, setValue] = useState(0);
     const [report, setReport] = useState("");
+    // Reverse logic. because I was lazy
+    const [inputFocus, setInputFocus] = useState(true);
 
     // Firebase 
 
@@ -54,10 +56,10 @@ const ReportBug = () => {
     
     return ( 
         <div className="reportbug">
-            <Sidebar />
+            {inputFocus? <Sidebar /> : <span></span>}
             <main>
                 <h1>Give feedback or report a bug</h1>
-                <p>What do you think of my Axecap finance webpage?</p>
+                <p>What do you think about my Crypto Watch?</p>
                 <form>
                     {/* Ratingsss */}
                     <Rating name="half-rating" defaultValue={0} precision={1} 
@@ -66,7 +68,6 @@ const ReportBug = () => {
                       setValue(newValue);
                     }}
                     />
-                    <br />
                     {/* <label htmlFor="report">Do you have any comments you'd like to share?</label> */}
                     {/* <textarea name="report" id="report" cols="30" rows="10" placeholder="Your detailed message" value={report} onChange={e => setReport(e.target.value)}></textarea> */}
                     <TextField
@@ -77,6 +78,8 @@ const ReportBug = () => {
                         fullWidth
                         className="reportbug__Textarea"
                         value={report} onChange={e => setReport(e.target.value)}
+                        onFocus={() => setInputFocus(false)}
+                        onBlur={() => setInputFocus(true)}
                     />
                     <Button variant="contained" onClick={sendReport}>
                         Send

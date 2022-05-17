@@ -23,7 +23,7 @@ const Main = () => {
         });
 
         // NEWS
-        axios.get('https://gnews.io/api/v4/search?q=crypto&token=b2fc134108f76f3c59b456a817026239')
+        axios.get('https://gnews.io/api/v4/search?q=crypto&lang=en&token=b2fc134108f76f3c59b456a817026239')
         .then(function (response) {
             console.log(response);
             setNews(response.data.articles)
@@ -56,7 +56,7 @@ const Main = () => {
                 {/* {data? <Asset /> : <Asset />
                 } */}
                 {data? (data.map((asset) => (
-                    <Asset assetName={asset.name} assetPrice={`USD ${asset.current_price.toLocaleString("en-US")}`} key={asset.market_cap_rank}/>
+                    <Asset assetName={asset.name} assetSymbol={asset.symbol} assetPrice={`USD ${asset.current_price.toLocaleString("en-US")}`} key={asset.market_cap_rank}/>
                     ))) : (
                         <div className='assetsTray__skeleton'>
                             <Asset />

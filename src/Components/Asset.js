@@ -1,5 +1,6 @@
 import { Button, Card, CardActions, CardContent, Skeleton } from '@mui/material';
-const Asset = ({assetName, assetPrice}) => {
+import './Asset.css'
+const Asset = ({assetName, assetPrice, assetSymbol}) => {
     return ( 
         <div className="asset">
             <Card sx={{ minWidth: 230 }} variant="outlined">
@@ -8,7 +9,9 @@ const Asset = ({assetName, assetPrice}) => {
                     <p>{assetPrice? assetPrice : <Skeleton variant="text" />}</p>
                 </CardContent>
                 <CardActions>
-                    <Button size="small">See More</Button>
+                    <Button size="small">
+                        <a href={`https://www.cnbc.com/quotes/${assetSymbol}.CM=`} className="asset__symbol" target='_blank' rel="noreferrer">See More</a>
+                    </Button>
                 </CardActions>
             </Card>
         </div>
