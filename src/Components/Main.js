@@ -12,7 +12,7 @@ const Main = () => {
     useEffect(() => {
         axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=4&page=1&sparkline=false')
         .then(function (response) {
-            console.log(response);
+            // console.log(response);
             setData(response.data)
         })
         .catch(function (error) {
@@ -25,7 +25,7 @@ const Main = () => {
         // NEWS
         axios.get('https://gnews.io/api/v4/search?q=crypto&lang=en&token=b2fc134108f76f3c59b456a817026239')
         .then(function (response) {
-            console.log(response);
+            // console.log(response);
             setNews(response.data.articles)
         })
         .catch(function (error) {

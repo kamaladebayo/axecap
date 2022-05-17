@@ -6,33 +6,6 @@
     padding: 2em;
     flex: 1;
 }
-@media(max-width: 850px){
-    .reportbug{
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .reportbug > main{
-        order: 1;
-        padding: 1.5em;
-        flex: 1;
-    }
-    .reportbug > .sidebar{
-        flex-direction: row;
-        order: 2;
-        justify-content: space-between;
-        padding: .5em 1.5em;
-        position: sticky;
-        bottom: 0;
-        flex: unset;
-        border-top: 1px solid #ABABAB;
-    }
-    .reportbug .sidebar .sidebar__logo > ion-icon{
-        font-size: 1.7rem;
-    }
-    /* .reportbug > span{
-        display: none;
-    } */
-}
 
 
 /* Rating stars */
@@ -61,4 +34,38 @@
 }
 .reportbug .css-1hw9j7s{
     margin-left: auto !important;
+}
+.reportbug 	.MuiSnackbar-root{
+    margin-bottom: calc(10vh + 1em);
+    bottom: 24px;
+    margin-left: calc(5vw + 1em);
+    left: 24px;
+    right: auto;
+}
+@media(max-width: 850px){
+    .reportbug{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .reportbug > main{
+        order: 1;
+        padding: 1.5em;
+        flex: 1;
+    }
+    .reportbug > .sidebar{
+        flex-direction: row;
+        order: 2;
+        justify-content: space-between;
+        padding: .5em 1.5em;
+        position: sticky;
+        bottom: 0;
+        flex: unset;
+        border-top: 1px solid #ABABAB;
+    }
+    .reportbug .sidebar .sidebar__logo > ion-icon{
+        font-size: 1.7rem;
+    }
+    .reportbug 	.MuiSnackbar-root{
+        margin-left: 0;
+    }
 }

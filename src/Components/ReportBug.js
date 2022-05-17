@@ -1,17 +1,30 @@
 import Sidebar from "./Sidebar";
 import './ReportBug.css'
-import { Button, Rating, TextField } from "@mui/material";
+import { Button, IconButton, Rating, Snackbar, TextField } from "@mui/material";
 import { useState } from "react";
+import CloseIcon from '@mui/icons-material/Close';
 // Firebase
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore"; 
+import { useMediaQuery } from "@mui/material";
 
 const ReportBug = () => {
     const [value, setValue] = useState(0);
     const [report, setReport] = useState("");
     // Reverse logic. because I was lazy
     const [inputFocus, setInputFocus] = useState(true);
+
+    // Snackbar code
+    const [open, setOpen] = useState(false);
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+        return;
+        }
+
+        setOpen(false);
+    };
 
     // Firebase 
 
@@ -36,12 +49,17 @@ const ReportBug = () => {
         if(feedback){
             try {
                 const docRef = addDoc(collection(db, "report"), {
-                    value: value,
+                    rating: value,
                     report: report
                 });
-                console.log("Document written with ID: ", docRef.id);
+                console.log(docRef.id);
+                // console.log("Document written with ID: ", docRef.id);
                 console.log("Feedback recorded");
-                console.log(feedback);
+                setReport('')
+                setOpen(true);
+
+                // console.log(feedback);
+
             } catch (e) {
             console.error("Error adding document: ", e);
             }
@@ -51,12 +69,13 @@ const ReportBug = () => {
     }
     
     
-
+    const matches = useMediaQuery('(max-width: 850px)');
 
     
     return ( 
         <div className="reportbug">
             {inputFocus? <Sidebar /> : <span></span>}
+            {/* {matches? <Sidebar /> : matches && inputFocus)? <Sidebar />} */}
             <main>
                 <h1>Give feedback or report a bug</h1>
                 <p>What do you think about my Crypto Watch?</p>
@@ -78,12 +97,30 @@ const ReportBug = () => {
                         fullWidth
                         className="reportbug__Textarea"
                         value={report} onChange={e => setReport(e.target.value)}
-                        onFocus={() => setInputFocus(false)}
-                        onBlur={() => setInputFocus(true)}
+                        onFocus={() => (matches? setInputFocus(false) : setInputFocus(true))}
+                        onBlur={() => (matches? setInputFocus(true) : setInputFocus(true))}
                     />
                     <Button variant="contained" onClick={sendReport}>
                         Send
                     </Button>
+                    <Snackbar
+                    open={open}
+                    autoHideDuration={3000}
+                    onClose={handleClose}
+                    message="Thanks for your feedback"
+                    action={
+                        <div>
+                            <IconButton
+                                size="small"
+                                aria-label="close"
+                                color="inherit"
+                                onClick={handleClose}
+                            >
+                                <CloseIcon fontSize="small" />
+                            </IconButton>
+                        </div>
+                    }
+                    />
                 </form>
             </main>
         </div>

@@ -8,6 +8,7 @@
     padding: 1em;
     align-items: center;
     gap: 2em;
+    z-index: 999;
 }
 .sidebar > span > ion-icon, .sidebar > a > ion-icon{
     font-size: 1.7rem;
