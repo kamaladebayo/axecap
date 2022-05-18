@@ -1,8 +1,8 @@
 import Sidebar from "./Sidebar";
 import './ReportBug.css'
-import { Button, IconButton, Rating, Snackbar, TextField } from "@mui/material";
+import { Button, Rating, Snackbar, TextField } from "@mui/material";
 import { useState } from "react";
-import CloseIcon from '@mui/icons-material/Close';
+// import CloseIcon from '@mui/icons-material/Close';
 // Firebase
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
@@ -110,14 +110,14 @@ const ReportBug = () => {
                     message="Thanks for your feedback"
                     action={
                         <div>
-                            <IconButton
-                                size="small"
-                                aria-label="close"
-                                color="inherit"
-                                onClick={handleClose}
-                            >
-                                <CloseIcon fontSize="small" />
-                            </IconButton>
+                            <ion-icon 
+                            name="close-outline" 
+                            onClick={handleClose} 
+                            style={{
+                                fontSize: '1.4rem', 
+                                fontWeight: '600', 
+                                cursor: 'pointer'
+                            }}></ion-icon>
                         </div>
                     }
                     />
