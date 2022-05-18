@@ -56,6 +56,7 @@ const ReportBug = () => {
                 // console.log("Document written with ID: ", docRef.id);
                 console.log("Feedback recorded");
                 setReport('')
+                setValue(0)
                 setOpen(true);
 
                 // console.log(feedback);
@@ -79,7 +80,7 @@ const ReportBug = () => {
             <main>
                 <h1>Give feedback or report a bug</h1>
                 <p>What do you think about my Crypto Watch?</p>
-                <form>
+                <form onSubmit={sendReport}>
                     {/* Ratingsss */}
                     <Rating name="half-rating" defaultValue={0} precision={1} 
                     value={value}
