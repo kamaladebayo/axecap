@@ -10,7 +10,7 @@ const Asset = ({assetName, assetPrice, assetSymbol}) => {
                 </CardContent>
                 <CardActions>
                     <Button size="small">
-                        <a href={`https://www.cnbc.com/quotes/${assetSymbol}.CM=`} className="asset__symbol" target='_blank' rel="noreferrer">See More</a>
+                        <a href={`https://www.cnbc.com/quotes/${assetSymbol}.CM=`} className="asset__symbol" target='_blank' rel="noreferrer">Expand</a>
                     </Button>
                 </CardActions>
             </Card>
